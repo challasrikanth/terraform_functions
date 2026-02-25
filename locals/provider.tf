@@ -5,17 +5,19 @@ terraform {
         version= "6.33.0"
       }
     }
+   
+   
    backend "s3" {
    bucket = "terraformbackend-p"
    key = "local.state.tfstate"
-   region = us-east-1
+   region = "us-east-1"
    encrypt      = true
-   use_lockefile = true 
+   use_lockfile = true 
    }
 
 }
 
 provider "aws" {
-    region = "us-east-1"
+  region = "us-east-1"
   
 }
